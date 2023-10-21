@@ -1,6 +1,7 @@
 import { useState } from 'react';
 function App() {
   const [length, setLength] = useState(8);
+  const [numberAllowed, setNumberAllowed] = useState(false);
 
   return (
     <>
@@ -29,6 +30,17 @@ function App() {
               }}
             />
             <label>Length:{length}</label>
+          </div>
+          <div className="flex items-center gap-x-1">
+            <input
+              type="checkbox"
+              defaultChecked={numberAllowed}
+              id="numberInput"
+              onChange={() => {
+                setNumberAllowed((prev) => !prev);
+              }}
+            />
+            <label>Number</label>
           </div>
         </div>
       </div>
